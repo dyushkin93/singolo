@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #f2f2f2;
+  border-bottom: 6px solid #ffffff;
 }
 header {
   height: 89px;
@@ -30,8 +31,8 @@ header a {
 .wrapper {
   display: flex;
   justify-content: space-between;
-  height: 100%;
   max-width: 940px;
+  min-width: 860px;
   padding: 0 40px;
   margin: 0 auto;
   font: bold 11.3px Lato;
@@ -54,11 +55,50 @@ nav {
   background-color: #323746;
 }
 
+/*Slider section*/
+
 .slider {
-  height: 594px;
   border-bottom: 6px solid #ea676b;
   background-color: #f06c64;
 }
+
+.slider > .wrapper {
+  align-items: center;
+}
+
+.slider button {
+  height: 27px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.next {
+  order: 3;
+}
+.next img {
+  transform: rotate(180deg);
+}
+.slider button:hover {  
+  
+}
+.slider button i {
+  font-size: 30px;
+}
+
+.container {
+  order: 2;
+}
+
+.slide {
+  padding: 58px 0;
+}
+
+.iphone-blue {
+  margin-left: 73px;
+}
+
+/*Main Section*/
 
 main {
   color: #666d89;
