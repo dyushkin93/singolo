@@ -1,14 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f2f2f2;
   border-bottom: 6px solid #ffffff;
+  background: #f2f2f2;
 }
+
 header {
   position: relative;
   width: 100%;
-  background-color: #2d303a;
   border-bottom: 6px solid #323746;
+  background-color: #2d303a;
   z-index: 900;
 }
 
@@ -23,7 +24,7 @@ header h1 a {
 }
 
 nav a {
-    padding: 42px 0 34px 0;
+  padding: 42px 0 34px 0;
 }
 
 header a:hover {
@@ -42,7 +43,7 @@ header a:hover {
   color: #f06c64;
 }
 
-.wrapper {
+.header-wrapper {
   display: flex;
   justify-content: space-between;
   max-width: 940px;
@@ -67,40 +68,50 @@ nav {
 
 .slider {
   position: relative;
-  top: -5px;
+  box-sizing: border-box;
   border-bottom: 6px solid #ea676b;
   background-color: #f06c64;
   z-index: 800;
 }
 
-.slider > .wrapper {
+.slider-wrapper {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  max-width: 950px;
+  min-width: 860px;
+  padding: 0 33px;
+  margin: 0 auto;
 }
 
 .slider button {
-  height: 27px;
+  position: relative;
+  top: -1px;
+  width: 27px;
+  height: 85px;
   padding: 0;
   border: none;
   background: none;
   cursor: pointer;
+  transition: background .1s;
+}
+
+.slider button:hover {
+  background: rgba(255, 255, 255, .15);
 }
 
 .prev {
-  margin-left: 2px;
-  margin-right: 53px;
+  margin-left: 1px;
+  margin-right: 48px;
 }
 
 .next {
-  margin-left: 54px;
+  margin-left: 48px;
   order: 3;
 }
 .next img {
   transform: rotate(180deg);
 }
-.slider button:hover {  
-  
-}
-
 
 .slider button i {
   font-size: 30px;
@@ -108,13 +119,13 @@ nav {
 
 .container {
   flex-grow: 1;
-  margin: 54px 0 60px 0;
+  margin: 47px 0 62px 0;
   order: 2;
 }
 
 .slide {
   position: relative;
-  top: 3px;
+  top: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -138,7 +149,7 @@ main {
 main > h1 {
   font: 900 30px Lato;  
   color: #666d89;
-  margin-top: 54px;
+  margin-top: 59px;
   margin-bottom: 18px;
   letter-spacing: -0.15px;
   }
@@ -154,6 +165,7 @@ main > p {
   display: flex;
   justify-content:space-between;
   margin-top: 16px;
+  margin-bottom: 59px;
   list-style-type: none;
   flex-wrap: wrap;
   padding: 0;
@@ -166,14 +178,11 @@ main > p {
 }
 
 .list-wrapper h2 {
+  margin: 0;
   font: 900 17.5px Lato;
+  letter-spacing: .27px;
   color: #666d89;
   list-style: none;
-  margin: 0;
-}
-
-.list-wrapper h2 > span {
-  letter-spacing:;
 }
 
 .list-wrapper p {
@@ -188,7 +197,6 @@ main > p {
   letter-spacing: .4px;
 }
 
-
 .icon {
   display: flex;
   align-items: center;
@@ -200,8 +208,4 @@ main > p {
   margin: 2px 20px 0 0;
   border: 2px solid #666d89;
   border-radius: 29.5px;
-}
-
-.icon img {
-
 }
