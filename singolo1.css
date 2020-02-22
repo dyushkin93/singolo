@@ -187,8 +187,10 @@ main > p {
 
 .list-wrapper p {
   max-width: 220px;
+  height: 6em;
   margin: 0;
   margin-top: 8px;
+  overflow: hidden;
   font: 400 11px Lato;
   line-height: 2;
   color: #666d89;
