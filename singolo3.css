@@ -90,6 +90,11 @@
   color: #f48c8f;
 }
 
+.application-form input::-ms-input-placeholder,
+.application-form textarea::-ms-input-placeholder {
+  color: #f48c8f;
+}
+
 .contacts {
   margin-left: 21px;
   width: 300px;
