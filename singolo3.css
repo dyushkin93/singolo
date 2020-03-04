@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+/* Get a Quote Section*/
+
+.project-application {
+  box-sizing: border-box;
+  border-bottom: 6px solid #ea676b;
+  background-color: #f06c64;
+}
+
+.content-box {
+  padding: 0 40px;
+  margin: 0 auto;
+  max-width: 940px;
+}
+
+.application-header h1 {
+  padding-top: 59px;
+  font-weight: 900;
+  font-size: 30px;
+  letter-spacing: -.2px;
+  color: #f0d8d9;
+}
+
+.application-header p {
+  padding-top: 18px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  text-align: justify;
+  color: #f0d8d9;
+}
+
+.application-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 44px;
+  padding-bottom: 13px;
+}
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 270px;
+}
+
+.application-form input,
+.application-form textarea,
+.application-form button {
+  border: 1px solid #d6564f;
+  border-radius: 3px;
+  padding-left: 15px;
+  margin-bottom: 16px;
+  height: 36px;
+  font-size: 12px;
+  line-height: 38px;
+  color: #f0d8d9;
+  background-color: #d6564f;
+  outline : none;
+}
+
+.application-form button {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  align-self: flex-end;
+}
+
+.application-form button:hover {
+  border-color: #f0d8d9;
+  background-color: #f0d8d9;
+  color: #d6564f;
+}
+
+#detail {
+  height: 202px;
+  resize: none;
+}
+
+.application-form input::placeholder,
+.application-form textarea::placeholder {
+  color: #f48c8f;
+}
+
+.contacts {
+  margin-left: 21px;
+  width: 300px;
+  text-align: justify;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -.04px;
+  color: #f0d8d9;
+}
+
+.contacts h2 {
+  padding-bottom: 9px;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 18px;
+  letter-spacing: -.1px;
+}
+
+.contacts ul {
+  margin-top: 20px;
+}
+
+.contacts a {
+  position: relative;
+  padding-left: 23px;
+  color: #f0d8d9;
+}
+
+.contacts a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contacts-icon span {
+  display: none;
+}
+
+.contacts a:hover {
+  text-decoration: underline;
+}
+
+.location::before {
+  top: 2px;
+  background-image: url(./assets/icon/location.png);
+}
+
+.phone::before {
+  top: 1px;
+  background-image: url(./assets/icon/phone_small.png)
+}
+
+.mail::before {
+  top: 2px;
+  background-image: url(./assets/icon/mail.png)
+}
+
+/* Footer Section*/
+
+footer {
+  color: #666d89;
+  background-color: #2d303a;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 22px 40px;
+  max-width: 940px;
+  font: 400 12px "Myriad Pro", Arial;
+}
+
+.copyright {
+  padding-bottom: 1px;
+  padding-left: 2px;
+}
+
+.social-media-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-media-footer li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  border: 1px solid #666d89;
+  border-radius: 15px;
+  font-size: 16px;
+  color: #666d89;
+  transition: color .1s;
+  transition: border-color .1s;
+  transition: background-color .1s;
+}
+
+.google-plus {
+  background-image: url(./assets/icon/icon_google+.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image .1s;
+}
+
+.google-plus:hover {
+  background-image: url(./assets/icon/icon_google+_footer_hover.png);
+}
+
+.social-media-footer li:hover {
+  color: #2d303a;
+  border-color: #666d89;
+  background-color: #666d89;
+}

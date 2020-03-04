@@ -3,32 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Singolo</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="singolo3.css">
+  <script src="https://kit.fontawesome.com/f6664f6ace.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="quote-header">
-    <h1>Get a Quote</h1>
-    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-    <div class="application-form">
-      <form action="#">
-        <input type="text" name="name" id="name" placeholder="Name (Required)">
-        <input type="text" name="email" id="email" placeholder="Email (Required)">
-        <input type="text" name="subject" id="subject" placeholder="Subject">
-        <input type="text" name="body" id="body" placeholder="Describe your project in detail...">
-      </form>
+  <div class="project-application">
+    <div class="application-header content-box">
+      <h1>Get a Quote</h1>
+      <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
     </div>
-    <div class="contacts">
-      <h2>Contact Information</h2>
-      <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
-      <ul>
-        <li>Elm St. 14/05 Lost City</li>
-        <li>03528 331 86 35</li>
-        <li>info@singolo.com</li>
-      </ul>
+    <div class="application-wrapper content-box">
+      <form class="application-form" action="#">
+          <input class="name" type="text" name="name" id="name" placeholder="Name (Required)" required>
+          <input type="email" name="email" id="email" placeholder="Email (Required)" required>
+          <input type="text" name="subject"   id="subject" placeholder="Subject">
+          <textarea name="detail" id="detail" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+          <button type="submit">Send</button>
+      </form>
+      <div class="contacts">
+        <h2>Contact Information</h2>
+        <p>Quisque hendrerit purus dapibus, ornare nibh vitae, viver&shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
+        <ul>
+          <li><a class="location" href="https://goo.gl/maps/UVwaHTVdDA4u8b3j6">Elm St. 14/05 Lost City</a></li>
+          <li><a class="phone" href="tel:035283318635">03528 331 86 35</a></li>
+          <li><a class="mail" href="mailto:nfo@singolo.com">info@singolo.com</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <footer>
-
+    <div class="footer-wrapper">
+      <p class="copyright">&#169; Copyright 2013</p>
+      <ul class="social-media-footer">
+        <a href=""><li><i class="fab fa-facebook-f"></i></li></a>
+        <a href=""><li class="google-plus"></li></a>
+        <a href=""><li><i class="fab fa-twitter"></i></li></a>
+        <a href=""><li><i class="fab fa-linkedin-in"></i></li></a>
+      </ul>
+    </div>
   </footer>
 </body>
 </html>
