@@ -97,5 +97,16 @@ galleryTabs.forEach(tab => {
   })
 })
 
+galleryImages.forEach(img => {
+  img.addEventListener("click", e=> {
+    galleryImages.forEach(img => {
+      img.classList.remove("active-image");
+    })
+    img.classList.add("active-image");
+  })
+})
+
+
+
 
 

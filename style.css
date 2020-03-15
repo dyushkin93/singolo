@@ -314,7 +314,7 @@ nav {
 
 .portfolio-wrapper {
   max-width: 960px;
-  padding: 0 40px;
+  padding: 0 30px;
   margin: 0 auto;
   overflow: auto;
   color: #666d89;
@@ -371,23 +371,30 @@ nav {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: left;
-  max-height: 601px;
+  max-height: 723px;
   overflow: hidden;
 }
 
-.gallery li {
+.gallery-all {
   height: 187px;
   width: 220px;
-  margin: 0 10px 20px;
+  margin: 10px;
   overflow: hidden;
   background-color: #464b5e;
   color: white;
+  cursor: pointer;
 }
 
 .active-tab {
   border: 1px solid #dedede;
   color: #dedede;
+}
+
+.active-image {
+  border: 5px solid #F06C64;
+  margin: 5px;
 }
 
 /*--------
@@ -553,7 +560,7 @@ nav {
 
 .application-form input,
 .application-form textarea,
-.application-form button {
+.send-button {
   border: 1px solid #d6564f;
   border-radius: 3px;
   padding-left: 15px;
@@ -566,14 +573,16 @@ nav {
   outline : none;
 }
 
-.application-form button {
+.send-button {
   margin: 0;
   padding: 0;
   width: 100px;
+  text-align: center;
   align-self: flex-end;
+  cursor: pointer;
 }
 
-.application-form button:hover {
+.send-button:hover {
   border-color: #f0d8d9;
   background-color: #f0d8d9;
   color: #d6564f;
