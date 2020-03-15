@@ -82,19 +82,17 @@ phoneScreen.forEach(elem => {
 let galleryTabs=document.querySelector(".gallery-filter").querySelectorAll("li");
 let gallery=document.querySelector(".gallery")
 let galleryImages=document.querySelectorAll(".gallery-all");
+let galleryImagesArray=Array.from(galleryImages);
 
 galleryTabs.forEach(tab => {
   tab.addEventListener("click", e => {
-    galleryTabs.forEach(elem => {
-      elem.classList.remove("active-tab")
-    })
-    tab.classList.add("active-tab")
     galleryImages.forEach(img => {
+        img.remove();
+    })
+    galleryImagesArray.forEach(img => {
       if (img.classList.contains(tab.id)) {
-        img.classList.remove("hidden-img");
-      } else {
-        img.classList.add("hidden-img");
-      } 
+        gallery.append(img);
+      }
     })
   })
 })

@@ -313,7 +313,7 @@ nav {
 }
 
 .portfolio-wrapper {
-  max-width: 940px;
+  max-width: 960px;
   padding: 0 40px;
   margin: 0 auto;
   overflow: auto;
@@ -322,6 +322,7 @@ nav {
 
 .portfolio h1 {
   margin: 66px 0 33px 0;
+  padding: 0 10px;
   font-size: 30px;
   font-weight: 900;
   line-height: 23px;
@@ -330,6 +331,7 @@ nav {
 }
 
 .portfolio h2 {
+  padding: 0 10px;
   font-size: 18px;
   font-weight: 300;
   line-height: 13px;
@@ -338,6 +340,7 @@ nav {
 
 .portfolio nav ul {
   display: flex;
+  padding: 0 10px;
 }
 
 .gallery-tab {
@@ -376,20 +379,15 @@ nav {
 .gallery li {
   height: 187px;
   width: 220px;
-  margin: 0 20px 20px 0;
+  margin: 0 10px 20px;
   overflow: hidden;
   background-color: #464b5e;
   color: white;
 }
 
-
 .active-tab {
   border: 1px solid #dedede;
   color: #dedede;
-}
-
-.hidden-img {
-  display: none;
 }
 
 /*--------
