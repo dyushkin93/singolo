@@ -1,4 +1,3 @@
-
 //----------------------//
 // Interactive Nav menu //
 //----------------------//
@@ -104,9 +103,40 @@ galleryImages.forEach(img => {
     })
     img.classList.add("active-image");
   })
+});
+
+//---------//
+// CONTACT //
+//---------//
+
+let message = document.querySelector(".message-preview");
+let appForm = document.querySelector(".application-form");
+
+const messageToggle = () => {
+  message.classList.toggle("toogle-message");
+};
+
+const messageFill = () => {
+  let subject = document.querySelector("#subject").value;
+  let description = document.querySelector("#detail").value;
+  document.querySelector(".message-subject").innerHTML += subject ? `${subject}` : "No subject";
+  document.querySelector(".message-description").innerHTML += description ? `${description}` : "No description"; 
+};
+
+const submitForm = (e) => {
+  e.preventDefault();
+  messageFill();
+  messageToggle();
+  appForm.reset();
+  return false;
+};
+
+appForm.addEventListener("submit", submitForm);
+document.querySelector(".close").addEventListener("click", messageToggle)
+window.addEventListener("click", (e) => {
+  if (e.target === message) {
+    messageToggle();
+  }
 })
-
-
-
-
+                                                  
 

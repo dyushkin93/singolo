@@ -130,7 +130,7 @@
         </div>
         <div class="profile">
           <img src="assets/profile_pic/Desmiond_Milles.png" alt="" class="photo">
-          <h2>Desmont Milles</h2>
+          <h2>Desmond Milles</h2>
           <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
           <ul class="social-media">
             <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
@@ -161,11 +161,11 @@
     </div>
     <div class="application-wrapper content-box">
       <form class="application-form" action="#">
-        <input class="name" type="text" name="name" id="name" placeholder="Name (Required)" required>
-        <input type="email" name="email" id="email" placeholder="Email (Required)" required>
-        <input type="text" name="subject"   id="subject" placeholder="Subject">
-        <textarea name="detail" id="detail" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
-        <p class="send-button">Send</p>
+        <input class="name" id="name" type="text" name="name" placeholder="Name (Required)" required>
+        <input id="email" type="email" name="email" id="email" placeholder="Email (Required)" required>
+        <input id="subject" type="text" name="subject" placeholder="Subject">
+        <textarea id="detail" name="detail" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+        <input class="send-button" type="submit" value="Send">
       </form>
       <div class="contacts">
         <h2>Contact Information</h2>
@@ -190,6 +190,14 @@
       </ul>
     </div>
   </footer>
+  <div class="message-preview">
+    <div class="message-container">
+      <h5>Letter was sent</h5>
+      <p class="message-subject"><span>Subject: </span></p>
+      <p class="message-description"><span>Description: </span></p>
+      <p class="close">OK</p>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
