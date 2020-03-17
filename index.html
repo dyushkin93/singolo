@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=1020, initial-scale=1.0">
   <title>Singolo</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
@@ -14,35 +15,43 @@
       <h1><a href="#">singolo<span>*</span></a></h1>
       </div>
       <nav>
-        <a href="">home</a>
+        <a class="nav-link" href="#home">home</a>
         <span>&#183;</span>
-        <a href="">services</a>
+        <a class="nav-link" href="#services">services</a>
         <span>&#183;</span>
-        <a href="">portfolio</a>
+        <a class="nav-link" href="#portfolio">portfolio</a>
         <span>&#183;</span>
-        <a href="">about</a>
+        <a class="nav-link" href="#about">about</a>
         <span>&#183;</span>
-        <a href="">contact</a>
+        <a class="nav-link" href="#contacts">contact</a>
       </nav>
     </div>
   </header>
-  <div class="slider">
-    <div class="slider-wrapper">
-      <button class="prev">
-        <img src="assets/icon/chev.png" width="16" height="27" alt="Previous slide">
-      </button>
-      <button class="next">
-        <img src="assets/icon/chev.png" width="16" height="27" alt="Next slide">
-      </button>
-      <div class="container">
-        <div class="slide active">
-          <img class="iphone-yellow" src="assets/slide/iphone-yellow.png" alt="iPhone with yellow screen">
-          <img class="iphone-blue" src="assets/slide/iphone-blue.png" alt="iPhone with blue screen">
-        </div>
+  <div class="slider" id="home">
+    <div class="arrows black-screen">
+      <div class="arrows-wrapper">
+        <img class="chev prev-button" src="./assets/icon/chev-left.png" alt="prev">
+        
+        <img class="chev next-button" src="./assets/icon/chev-right.png" alt="next">
       </div>
     </div>
+    <div class="slide slide-1 active-slide">
+      <div class="iphone-yellow">
+        <img src="./assets/slide/iphone-yellow.png" width="242" height="485" alt="iphone-yellow">
+        <div class="screen black-screen-vertical"></div>
+      </div>
+      <div class="iphone-blue">
+        <img src="./assets/slide/iphone-blue.png" width="486" height="242" alt="" >
+        <div class="screen black-screen-horizontal"></div>
+      </div>
+    </div>
+    <div class="slide slide-2">
+      <img class="left-side-phone" src="./assets/slide/iPhone-shadowed.png" alt="">
+      <img class="iphone-green" src="./assets/slide/iPhone-green.png" alt="">
+      <img class="right-side-phone" src="./assets/slide/iPhone-shadowed.png" alt="">
+    </div>
   </div>
-  <div class="our-services">
+  <div class="our-services" id="services">
     <div class="our-services-wrapper">
       <h1>Our Services</h1>
       <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non com&shy;modo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -74,35 +83,36 @@
       </ul>
     </div>
   </div>
-  <div class="portfolio">
+  <div class="portfolio" id="portfolio">
     <div class="portfolio-wrapper">
       <h1>Portfolio</h1>
       <h2>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, egetlacinia odio sem nec elit.</h2>
       <nav>
-        <ul>
-          <li><a href="">All</a></li>
-          <li><a href="">Web-Design</a></li>
-          <li><a href="">Graphic Design</a></li>
-          <li><a href="">Artwork</a></li>
+        <ul class="gallery-filter">
+          <li id="gallery-all" class="gallery-tab active-tab">All</li>
+          <li class="gallery-tab" id="web-design">Web-Design</li>
+          <li class="gallery-tab" id="graphic-design">Graphic Design</li>
+          <li class="gallery-tab" id="artwork">Artwork</li>
         </ul>
       </nav>
       <ul class="gallery">
-        <li><img src="assets/gallery/boat.png" alt="boat"></li>
-        <li><img src="assets/gallery/ice-cream_girl.png" alt="ice-cream_girl"></li>
-        <li><img src="assets/gallery/space_fortress.png" alt="space_fortress"></li>
-        <li><img src="assets/gallery/robot.png" alt="">robot</li>
-        <li><img src="assets/gallery/expressionism-animals.png" alt="expressionism-animals"></li>
-        <li><img src="assets/gallery/plant.png" alt="plant"></li>
-        <li><img src="assets/gallery/aliens.png" alt="aliens"></li>
-        <li><img src="assets/gallery/chiken-tree.png" alt="chiken-tree"></li>
-        <li><img src="assets/gallery/fortressaurus.png" alt="fortressaurus"></li>
-        <li><img src="assets/gallery/killed.png" alt="killed"></li>
-        <li><img src="assets/gallery/monster.png" alt="monster"></li>
-        <li><img src="assets/gallery/instrumental_glass.png" alt="instrumental_glass"></li>
+        <li class="artwork gallery-all"><img src="assets/gallery/boat.png" alt="boat"></li>
+        <li class="artwork graphic-design gallery-all"><img src="assets/gallery/ice-cream_girl.png" alt="ice-cream_girl"></li>
+        <li class="artkwork gallery-all"><img src="assets/gallery/space_fortress.png" alt="space_fortress"></li>
+        <li class="web-design gallery-all"><img src="assets/gallery/robot.png" alt="">robot</li>
+        <li class="artwork gallery-all"><img src="assets/gallery/expressionism-animals.png" alt="expressionism-animals"></li>
+        <li class="web-design gallery-all"><img src="assets/gallery/plant.png" alt="plant"></li>
+        <li class="graphic-design gallery-all"><img src="assets/gallery/aliens.png" alt="aliens"></li>
+        <li class="graphic-design gallery-all"><img src="assets/gallery/chiken-tree.png" alt="chiken-tree"></li>
+        <li class="artwork graphic-design gallery-all"><img src="assets/gallery/fortressaurus.png" alt="fortressaurus"></li>
+        <li class="artwork graphic-design gallery-all"><img src="assets/gallery/killed.png" alt="killed"></li>
+        <li class="artwork gallery-all"><img src="assets/gallery/monster.png" alt="monster"></li>
+        <li class="artwork gallery-all"><img src="assets/gallery/instrumental_glass.png" alt="instrumental_glass"></li>
       </ul>
     </div>
   </div>
-  <div class="about-us">
+  <div class="about-us" id="about">
+    <a name="about"></a>
     <div class="about-us-wrapper">
       <h1>About Us</h1>
       <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
@@ -120,7 +130,7 @@
         </div>
         <div class="profile">
           <img src="assets/profile_pic/Desmiond_Milles.png" alt="" class="photo">
-          <h2>Desmont Milles</h2>
+          <h2>Desmond Milles</h2>
           <p>Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
           <ul class="social-media">
             <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
@@ -143,18 +153,19 @@
       </div>
     </div>
   </div>
-  <div class="project-application">
+  <div class="project-application" id="contacts">
+    <a name="contact"></a>
     <div class="application-header content-box">
       <h1>Get a Quote</h1>
       <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
     </div>
     <div class="application-wrapper content-box">
       <form class="application-form" action="#">
-        <input class="name" type="text" name="name" id="name" placeholder="Name (Required)" required>
-        <input type="email" name="email" id="email" placeholder="Email (Required)" required>
-        <input type="text" name="subject"   id="subject" placeholder="Subject">
-        <textarea name="detail" id="detail" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
-        <button type="submit">Send</button>
+        <input class="name" id="name" type="text" name="name" placeholder="Name (Required)" required>
+        <input id="email" type="email" name="email" id="email" placeholder="Email (Required)" required>
+        <input id="subject" type="text" name="subject" placeholder="Subject">
+        <textarea id="detail" name="detail" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+        <input class="send-button" type="submit" value="Send">
       </form>
       <div class="contacts">
         <h2>Contact Information</h2>
@@ -179,5 +190,14 @@
       </ul>
     </div>
   </footer>
+  <div class="message-preview">
+    <div class="message-container">
+      <h5>Letter was sent</h5>
+      <p class="message-subject"><span>Subject: </span></p>
+      <p class="message-description"><span>Description: </span></p>
+      <p class="close">OK</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
