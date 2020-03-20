@@ -3,68 +3,125 @@
 //----------------------//
 let navLink=document.querySelectorAll('.nav-link')
 let headerHeight=document.querySelector("header").getBoundingClientRect().height;
+let windowHeight=document.documentElement.clientHeight;
 
-navLink.forEach(link => {
-  let block = link.getAttribute('href');
-  block = document.querySelector(block);
-  
-  link.addEventListener("click", e => {
-    navLink.forEach(elem => {
-      elem.classList.remove("active-link");
-    })
-    e.preventDefault();
-    link.classList.add("active-link");
-    let scrollToY = block.getBoundingClientRect().top+pageYOffset-headerHeight+1;
-    scrollTo(0, scrollToY);
+const toggleTab = (tab) => {
+  navLink.forEach(tab => {
+    tab.classList.remove("active-nav-tab");
   });
-})
+  tab.classList.add("active-nav-tab");
+};
 
-//-------//
-// Slier //
-//-------//
-
-let nextButton=document.querySelector(".next-button");
-let prevButton=document.querySelector(".prev-button");
-let slides=document.querySelectorAll(".slide");
-nextButton.addEventListener("click", e => {
-  for (let i=0; i<slides.length; i++) {
-    if (slides[i].classList.contains("active-slide")) {
-      let value=100;
-      let nextElemPos=slides[(i+1)%slides.length].style.left=value+"%";
-      slides[i].classList.remove("active-slide");
-      slides[(i+1)%slides.length].classList.add("active-slide");
-      let timer = setInterval (function() {
-        if (value>0) {
-          value-=4;
-          nextElemPos=slides[(i+1)%slides.length].style.left=value+"%";
-        } else {
-          clearInterval(timer)
-        }
-      }, 9)
-      break;
-    }
+const scrollToBlock = (blockDocPos) => {
+  let scrollValue = pageYOffset;
+  if (pageYOffset < blockDocPos) {
+    let timer = setInterval(() => {
+      if (pageYOffset < blockDocPos && pageYOffset < document.documentElement.getBoundingClientRect().height - windowHeight) {
+        scrollValue += 200;
+        window.scrollTo(0, scrollValue);
+      } else {
+        clearInterval(timer);
+      }
+    }, 35);
+  } else if (pageYOffset > blockDocPos) {
+    let timer = setInterval(() => {
+      if (pageYOffset > blockDocPos) {
+        scrollValue -= 200;
+        window.scrollTo(0, scrollValue);
+      } else {
+        clearInterval(timer);
+      }
+    }, 35);
   }
+}
+
+window.addEventListener("scroll", e => {
+  navLink.forEach(tab => {
+    let link = tab.getAttribute("href");
+    let blockWinPos=document.querySelector(link).getBoundingClientRect().top;
+    if (blockWinPos <= windowHeight*0.4) {
+      toggleTab(tab);
+    } else if (link === "#contact" && pageYOffset >= document.querySelector("footer").getBoundingClientRect().top + pageYOffset) {
+      toggleTab(tab);
+    }
+  });
+});
+
+navLink.forEach(tab => {
+  let link = tab.getAttribute("href");
+  let blockDocPos=document.querySelector(link).getBoundingClientRect().top + pageYOffset - headerHeight;
+  tab.addEventListener("click", e => {
+    e.preventDefault();
+    scrollToBlock(blockDocPos);
+  });
+});
+
+
+
+
+
+
+//--------//
+// Sldier //
+//--------//
+
+window.addEventListener("scroll", e => {
+  console.log("scrolling")
 })
 
-prevButton.addEventListener("click", e => {
-  for (let i=0; i<slides.length; i++) {
-    if (slides[i].classList.contains("active-slide")) {
-      let value=-100;
-      let prevElemPos=slides[Math.abs(i-1)%slides.length].style.left=value+"%";
-      slides[i].classList.remove("active-slide");
-      slides[Math.abs(i-1)%slides.length].classList.add("active-slide");
-      let timer = setInterval (function() {
-        if (value<0) {
-          value+=4;
-          nextElemPos=slides[Math.abs(i-1)%slides.length].style.left=value+"%";
+let buttons = document.querySelectorAll(".chev");
+let slides = document.querySelectorAll(".slide");
+let slideAnimation = false;
+
+const toggleSlide = (currentSlide, nextSlide, button) => {
+  button.classList.contains("next-button") ? nextSlide.style.left = 100 + "%" : nextSlide.style.left = -100 + "%";
+  let moveLeftValue = 100;
+  let moveRightValue = 0;
+  let step = 2;
+  let timer = setInterval((e) => {
+      slideAnimation = true;
+      if (button.classList.contains("next-button")) {
+        if (moveLeftValue > 0) {
+          moveLeftValue-=step;
+          nextSlide.style.left=moveLeftValue+"%";
+          currentSlide.style.left=moveLeftValue-100+"%";
         } else {
-          clearInterval(timer)
+          slideAnimation = false;
+          clearInterval(timer);
+          }
+      } else {
+        if (moveRightValue < 100) {
+          moveRightValue+=step;
+          nextSlide.style.left=moveRightValue-100+"%";
+          currentSlide.style.left=moveRightValue+"%";
+        } else {
+          slideAnimation = false;
+          clearInterval(timer);
         }
-      }, 9)
-      break;
-    }
-  }
-})
+      }
+  }, 10);
+  currentSlide.classList.remove("active-slide");
+  nextSlide.classList.add("active-slide");
+}
+
+
+
+buttons.forEach((button) => {
+   button.addEventListener("click", (e) => {
+    for (let i = 0; i < slides.length; i++) {
+       if (slides[i].classList.contains("active-slide")) {
+         let currentSlide = slides[i];
+         let j=0;
+         i = 0 ? j=slides.length-1 : j=i+1;
+         let nextSlide = slides[j % slides.length];
+         if (slideAnimation === false) {
+           toggleSlide(currentSlide, nextSlide, button);
+         }
+        break;
+      };
+    };
+  });
+ });
 
 let phoneScreen=document.querySelectorAll(".screen")
 
@@ -83,16 +140,31 @@ let gallery=document.querySelector(".gallery")
 let galleryImages=document.querySelectorAll(".gallery-all");
 let galleryImagesArray=Array.from(galleryImages);
 
+const shuffleArray = (arr) => {
+  arr.sort(() => Math.random() - 0.5);
+}
+
+const shuffleImages = (tab) => {
+  galleryTabs.forEach(tab => {
+    tab.classList.remove("active-tab");
+  })
+  tab.classList.add("active-tab");
+  galleryImagesArray.forEach(img => {
+    img.classList.add("hidden-img")
+  })
+  galleryImages.forEach(img => {
+    img.remove()
+  })
+  shuffleArray(galleryImagesArray);
+  galleryImagesArray.forEach(img => {
+    gallery.append(img);
+    img.classList.remove("hidden-img")
+  })
+}
+
 galleryTabs.forEach(tab => {
   tab.addEventListener("click", e => {
-    galleryImages.forEach(img => {
-        img.remove();
-    })
-    galleryImagesArray.forEach(img => {
-      if (img.classList.contains(tab.id)) {
-        gallery.append(img);
-      }
-    })
+    shuffleImages(tab);
   })
 })
 

@@ -71,7 +71,7 @@ nav {
   color: #494e62;
 }
 
-.active-link {
+.active-nav-tab {
   color: #f06c64;
 }
 
@@ -385,6 +385,7 @@ nav {
   background-color: #464b5e;
   color: white;
   cursor: pointer;
+  
 }
 
 .active-tab {
@@ -395,6 +396,12 @@ nav {
 .active-image {
   border: 5px solid #F06C64;
   margin: 5px;
+  transition: border .3s, margin .3s;
+}
+
+.hidden-img {
+  opacity: 0;
+  transition: opacity, .5s;
 }
 
 /*--------
