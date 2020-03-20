@@ -30,10 +30,10 @@ const scrollToBlock = (blockDocPos) => {
         window.scrollTo(0, scrollValue);
       } else {
         clearInterval(timer);
-      }
+      };
     }, 35);
-  }
-}
+  };
+};
 
 window.addEventListener("scroll", e => {
   navLink.forEach(tab => {
@@ -43,7 +43,7 @@ window.addEventListener("scroll", e => {
       toggleTab(tab);
     } else if (link === "#contact" && pageYOffset >= document.querySelector("footer").getBoundingClientRect().top + pageYOffset) {
       toggleTab(tab);
-    }
+    };
   });
 });
 
@@ -56,18 +56,9 @@ navLink.forEach(tab => {
   });
 });
 
-
-
-
-
-
 //--------//
-// Sldier //
+// Slider //
 //--------//
-
-window.addEventListener("scroll", e => {
-  console.log("scrolling")
-})
 
 let buttons = document.querySelectorAll(".chev");
 let slides = document.querySelectorAll(".slide");
@@ -97,14 +88,12 @@ const toggleSlide = (currentSlide, nextSlide, button) => {
         } else {
           slideAnimation = false;
           clearInterval(timer);
-        }
-      }
+        };
+      };
   }, 10);
   currentSlide.classList.remove("active-slide");
   nextSlide.classList.add("active-slide");
-}
-
-
+};
 
 buttons.forEach((button) => {
    button.addEventListener("click", (e) => {
@@ -128,8 +117,8 @@ let phoneScreen=document.querySelectorAll(".screen")
 phoneScreen.forEach(elem => {
   elem.addEventListener("click", e => {
     elem.classList.toggle("on-off-screen");
-  })
-})
+  });
+});
 
 //-----------//
 // PORTFOLIO //
@@ -142,39 +131,39 @@ let galleryImagesArray=Array.from(galleryImages);
 
 const shuffleArray = (arr) => {
   arr.sort(() => Math.random() - 0.5);
-}
+};
 
 const shuffleImages = (tab) => {
   galleryTabs.forEach(tab => {
     tab.classList.remove("active-tab");
-  })
+  });
   tab.classList.add("active-tab");
   galleryImagesArray.forEach(img => {
     img.classList.add("hidden-img")
-  })
+  });
   galleryImages.forEach(img => {
-    img.remove()
-  })
+    img.remove();
+  });
   shuffleArray(galleryImagesArray);
   galleryImagesArray.forEach(img => {
     gallery.append(img);
     img.classList.remove("hidden-img")
-  })
-}
+  });
+};
 
 galleryTabs.forEach(tab => {
   tab.addEventListener("click", e => {
     shuffleImages(tab);
-  })
-})
+  });
+});
 
 galleryImages.forEach(img => {
   img.addEventListener("click", e=> {
     galleryImages.forEach(img => {
       img.classList.remove("active-image");
-    })
+    });
     img.classList.add("active-image");
-  })
+  });
 });
 
 //---------//
@@ -208,7 +197,5 @@ document.querySelector(".close").addEventListener("click", messageToggle)
 window.addEventListener("click", (e) => {
   if (e.target === message) {
     messageToggle();
-  }
-})
-                                                  
-
+  };
+});
