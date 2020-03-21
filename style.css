@@ -91,10 +91,12 @@ nav {
   position: absolute;
   top: 49%;
   width: 100%;
-  z-index: 997;
+  z-index: 996;
+  pointer-events: none;
 }
 
 .arrows-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,6 +106,7 @@ nav {
 }
 
 .chev {
+  pointer-events: all;
   cursor: pointer;
 }
 
