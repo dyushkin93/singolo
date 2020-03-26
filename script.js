@@ -52,6 +52,23 @@ window.addEventListener("scroll", e => {
   });
 });
 
+let burger = document.querySelector(".burger-menu");
+let navMenu = document.querySelector(".header-wrapper");
+let headerBack = document.querySelector(".header-background");
+
+let toogleMobileNav = () => {
+  navMenu.classList.toggle("active-header-mobile");
+  headerBack.classList.toggle("header-background-active");
+  burger.classList.toggle("active-burger-menu");
+}
+
+burger.addEventListener("click", e => {
+  toogleMobileNav();
+})
+
+headerBack.addEventListener("click", e => {
+  toogleMobileNav();
+})
 
 navLink.forEach(tab => {
   let link = tab.getAttribute("href");
@@ -60,9 +77,13 @@ navLink.forEach(tab => {
     e.preventDefault();
     if (scrollingActive == false) {
       scrollToBlock(blockDocPos);
+      toogleMobileNav();
     }
   });
 });
+
+
+
 
 //--------//
 // Slider //
@@ -208,6 +229,5 @@ window.addEventListener("click", (e) => {
   if (e.target === message) {
     messageToggle();
   }
-})
-                                                  
+});
 
