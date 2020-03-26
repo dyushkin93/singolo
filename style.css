@@ -32,6 +32,27 @@ header {
   max-width: 940px;
   padding: 0 40px;
   margin: 0 auto;
+  z-index: 2
+}
+
+.burger-menu {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  height: 65px;
+  width: 65px;
+  color: #FFFFFF;
+  display: none;
+  cursor: pointer;
+  background-image: url(./assets/icon/Burger-menu-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.active-burger-menu {
+  transform: rotateZ(90deg)
 }
 
 header a {
@@ -91,10 +112,12 @@ nav {
   position: absolute;
   top: 49%;
   width: 100%;
-  z-index: 997;
+  z-index: 996;
+  pointer-events: none;
 }
 
 .arrows-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -104,6 +127,7 @@ nav {
 }
 
 .chev {
+  pointer-events: all;
   cursor: pointer;
 }
 
@@ -225,8 +249,7 @@ nav {
 
 .services-list li {
   position: relative;
-  margin-top: 28px;
-  margin-left: 80px;
+  margin: 28px 5px 0 80px;
 }
 
 .services-list li::before {
@@ -332,6 +355,7 @@ nav {
 
 .portfolio h2 {
   padding: 0 10px;
+  margin-bottom: 19px;
   font-size: 18px;
   font-weight: 300;
   line-height: 13px;
@@ -346,7 +370,7 @@ nav {
 .gallery-tab {
   box-sizing: border-box;
   padding: 0 7px;
-  margin: 19px 10px 19px 0;
+  margin:0 0 7px 10px;
   border: 1px solid #666d89;
   border-radius: 5px;
   font-size: 12px;
@@ -373,6 +397,7 @@ nav {
   flex-wrap: wrap;
   align-items: center;
   justify-content: left;
+  margin-top: 19px;
   max-height: 723px;
   overflow: hidden;
 }
@@ -527,7 +552,7 @@ nav {
 }
 
 .content-box {
-  padding: 0 40px;
+  padding: 0 30px;
   margin: 0 auto;
   max-width: 940px;
 }
@@ -561,7 +586,7 @@ nav {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  min-width: 270px;
+  min-width: 240px;
 }
 
 .application-form input,
@@ -792,7 +817,7 @@ footer .google-plus:hover {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1019px) {
 
   .slider {
     height: 452px;
@@ -841,8 +866,21 @@ footer .google-plus:hover {
     height: auto;
   }
 
+  .left-side-phone {
+    left: 1.3em;
+  }
+
+  .right-side-phone {
+    left: -1.3em;
+  }
+
+  .services-list li {
+    margin-top: 39px;
+  }
+
   .gallery {
     max-height: 816px;
+    justify-content: space-evenly;
   }
   
   .gallery-all {
@@ -855,5 +893,265 @@ footer .google-plus:hover {
     border: 5px solid #F06C64;
     margin: 5px;
     transition: border .3s, margin .3s;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    box-sizing: border-box;
+    height: 71px;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .header-wrapper {
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100%;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  .active-header-mobile {
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding-left: 71px;
+    width: 278px;
+    height: 100%;
+    background-color: #2D303A;
+    box-shadow: 0px 0px 15px 1px #000000;
+    z-index: 1000;
+    animation-direction: alternate;
+    animation-duration: .3s;
+    animation-name: menu-slide;
+  }
+  
+  @keyframes menu-slide {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 0;
+    }
+  }
+  
+  .header-background{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: opacity 3s;
+  }
+  
+  .header-background-active {
+    display: block;
+    opacity: 1;
+  }
+
+
+  .active-header-mobile .logo {
+    line-height: 65px;
+    align-self: flex-start;
+  }
+
+  .active-header-mobile nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 39.4vh;
+  }
+
+  .active-header-mobile nav span {
+    display: none;
+  }
+
+  .active-header-mobile nav a {
+    font-size: 24px;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .slide,
+  .slider {
+    height: 221px;
+  }
+
+  .arrows-wrapper {
+    padding: 0 2.57%;
+    }
+
+  .chev {
+    height: 25px;
+    width: auto;
+  }
+
+  .iphone-yellow {
+  box-sizing: border-box;
+  margin-right: 7.2%;
+  padding-right: 0;
+  }
+
+  .iphone-yellow img {
+    width: 88.3px;
+    height: 177.61px;
+  }
+
+  .iphone-blue img {
+    width: 177.61px;
+    height: 88.3px;
+  }
+
+  .black-screen-vertical {
+    top: 24px;
+    left: 5px;
+    width: 70px;
+    height: 123px
+  }
+
+  .black-screen-horizontal {
+    top: 5px;
+    left: 22px;
+    width: 122px;
+    height: 69.5px;
+  }
+
+  .iphone-green {
+    height: 188.6px;
+    width: auto;
+  }
+
+  .left-side-phone,
+  .right-side-phone {
+    height: 115.45px;
+    width: auto;
+  }
+
+  .left-side-phone {
+    left: .5em;
+  }
+
+  .right-side-phone {
+    left: -.7em;
+  }
+
+  .our-services-wrapper {
+    padding: 0 32px;
+  }
+
+  .portfolio {
+    padding-bottom: 42px;
+  }
+
+  .gallery {
+    max-height: 558px;
+  }
+
+  .portfolio h2 {
+    line-height: 30px;
+  }
+
+  .gallery-all {
+    margin: 6px;
+  }
+
+  .gallery-all img,
+  .gallery-all {
+    width: 151px;
+    height: 128px;
+  }
+
+  .active-image {
+    border: 3px solid #F06C64;
+    margin: 3px;
+    transition: border .3s, margin .3s;
+  }
+
+  .portfolio-wrapper {
+    padding: 0 24px;
+  }
+
+  .portfolio h1,
+  .portfolio h2,
+  .portfolio nav ul {
+    padding: 0 6px;
+  }
+
+  .gallery-nav {
+    width: auto;
+  }
+
+  .about-us-wrapper {
+    padding: 0 30px;
+  }
+
+  .about-us h1 {
+    margin-top: 33px;
+  }
+  .profiles-container {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-bottom: 45px;
+  }
+
+  .profile {
+    margin-top: 34px;
+    width: 100%;
+  }
+
+  .social-media i,
+  .profile .google-plus {
+    margin-top: 15px;
+  }
+
+  .application-wrapper {
+    flex-wrap: wrap;
+    padding-bottom: 42px;
+  }
+  
+  form .send-button {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .contacts {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .footer-wrapper {
+    justify-content: center;
+  }
+  
+  footer p {
+    display: none;
+  }
+}
+
+@media (max-width: 374px) {
+
+  .gallery-filter {
+    flex-wrap: wrap;
   }
 }
