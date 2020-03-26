@@ -12,34 +12,6 @@ const toggleTab = (tab) => {
   tab.classList.add("active-nav-tab");
 };
 
-const scrollToBlock = (blockDocPos) => {
-  let scrollValue = pageYOffset;
-  let scrollStep = (blockDocPos - pageYOffset)/20;
-  if (pageYOffset < blockDocPos) {
-    let timer = setInterval(() => {
-      scrollingActive = true;
-      if (pageYOffset < blockDocPos && pageYOffset < document.documentElement.getBoundingClientRect().height - windowHeight - 1) {
-        scrollValue += scrollStep;
-        window.scrollTo(0, scrollValue);
-      } else {
-        clearInterval(timer);
-        scrollingActive = false;
-      }
-    }, 30);
-  } else if (pageYOffset > blockDocPos) {
-    let timer = setInterval(() => {
-      scrollingActive = true;
-      if (pageYOffset > blockDocPos) {
-        scrollValue += scrollStep;
-        window.scrollTo(0, scrollValue);
-      } else {
-        clearInterval(timer);
-        scrollingActive = false;
-      }
-    }, 30);
-  }
-}
-
 window.addEventListener("scroll", e => {
   navLink.forEach(tab => {
     let link = tab.getAttribute("href");
@@ -71,14 +43,8 @@ headerBack.addEventListener("click", e => {
 })
 
 navLink.forEach(tab => {
-  let link = tab.getAttribute("href");
-  let blockDocPos=document.querySelector(link).getBoundingClientRect().top + pageYOffset - headerHeight;
   tab.addEventListener("click", e => {
-    e.preventDefault();
-    if (scrollingActive == false) {
-      scrollToBlock(blockDocPos);
       toogleMobileNav();
-    }
   });
 });
 
